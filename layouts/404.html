@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}" dir="ltr">
+<head>
+    {{ partial "resources/title.html" . }}
+    {{ partial "resources/base.html" . }}
+    {{ partial "resources/custom.html" . }}
+</head>
+<body vocab="http://schema.org/" typeof="WebPage">
+    {{ partial "header/skiplink.html" . }}
+    {{ partial "header/header.html" . }}
+    <main role="main" property="mainContentOfPage" class="container">
+        <div class="col-md-12">
+            <h1><span class="glyphicon glyphicon-warning-sign mrgn-rght-md"></span>404 - Page Not Found</h1>
+            <p>We're sorry you ended up here. Sometimes a page gets moved or deleted, but hopefully we can help you find what you're looking for.</p>
+            <ul>
+                <li>Return to the <a href="{{ .Site.BaseURL }}">home page</a></li>
+            </ul>
+        </div>
+    </main>
+    {{ partial "footer/footer.html" . }}
+</body>
+</html>

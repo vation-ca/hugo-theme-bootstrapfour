@@ -1,0 +1,11 @@
+{{ define "main" }}
+<h1>New default/about.html</h1>
+    <main role="main" property="mainContentOfPage" class="container">
+        <h1 id="wb-cont" property="name">{{ .Site.Title }}</h1>
+        <div class="drupal">
+            {{ range .Data.Pages }}
+            {{ .Render "li"}}
+            {{ end }}
+        </div>
+    </main>
+{{ end }}

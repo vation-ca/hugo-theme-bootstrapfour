@@ -1,0 +1,17 @@
+<article class="post">
+    <header>
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>                  
+        {{ partial "snippets/authorattribution" .}}
+                	
+    </header>
+    <div class="post-content">
+        {{ .Description }}
+      
+    </div>
+    
+    <footer class="read-more-link">
+        <a href="{{ .Permalink }}" class="btn btn-default">Full Article text</a>
+    </footer>
+   
+</article>
+<hr>

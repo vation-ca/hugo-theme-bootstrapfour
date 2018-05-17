@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}" dir="ltr">
+<head>
+    {{ partial "resources/title.html" . }}
+    {{ partial "resources/base.html" . }}
+    {{ partial "resources/custom.html" . }}
+</head>
+<body vocab="http://schema.org/" typeof="WebPage">
+    {{ partial "header/header.html" . }}
+    <main role="main" property="mainContentOfPage" class="container">
+        
+        {{ .Content }}
+        {{ partial "components/date.html" . }}
+    </main>
+    {{ partial "footer/footer.html" . }}
+</body>
+</html>

@@ -1,0 +1,6 @@
+{{ define "main" }}
+    <main role="main" property="mainContentOfPage" class="container">        
+        {{ .Content }}
+        {{ partial "components/date.html" . }}
+    </main>
+{{ end }}

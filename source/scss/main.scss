@@ -1,0 +1,15 @@
+// $gray-light: #767676 !default;
+
+// contrast borrowed from https://github.com/wet-boew/wet-boew/blob/master/src/_variables.scss
+$theme-colors: (
+  "primary": #2572b4,
+  "success": #1b6c1c,
+  "info": #4d4d4d,
+  "warning": #f2d40d,
+  "danger": #bc3331
+);
+
+// Boostrap Overrides
+//$link-color: #295376 !default;
+//$link-hover-color: #0535d2 !default;
+$line-height-base:            1.6 !default;
