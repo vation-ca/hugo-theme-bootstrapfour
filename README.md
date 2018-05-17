@@ -24,7 +24,6 @@ Simply follow the commands listed below given you have the appropriate files
     cd `website`/themes
     git clone https://github.com/vation-ca/hugo-theme-bootstrapfour.git bootstrapfour && cd bootstrapfour
     npm install
-    npm run prepare
     npm run build
 ```
 
