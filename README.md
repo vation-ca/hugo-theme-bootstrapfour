@@ -26,6 +26,46 @@ Simply follow the commands listed below given you have the appropriate files
     npm install
     npm run build
 ```
+Go back to website top level
+```sh
+    cd ../..
+```
+
+## Create content
+
+A config.yaml file that was used to develop this theme
+```yaml
+BaseUrl: "https://vation.ca/"
+ContentDir: "content"
+LayoutDir: "layouts"
+PublishDir: "public"
+BuildDrafts: true
+languageCode: "en-us"
+Title: "Vation.ca"
+PluralizeListTitles: False
+googleAnalytics: ""
+menu:
+ 
+Params:
+  Author: "Vation Team"
+  Banner: "Providing information on work being done by the Vation team!"
+  DateForm: "2006-01-02"
+  disqusShortname: ""
+  Search: "vation.ca"
+  ShowRelatedPost: True
+  Slogan: "Portfolio site for Vation Inc."
+
+taxonomies:
+  tag: "tags"
+permalinks:
+  post: /post/:year/:slug/
+MetadataFormat: "yaml"
+theme: "bootstrapfour"
+sitemap:
+  changefreq: "monthly"
+  priority: 0.5
+  filename: "sitemap.xml"
+```
 
 To use hugo to launch a development local site with options to help monitor
 ```sh
@@ -33,9 +73,12 @@ To use hugo to launch a development local site with options to help monitor
 ```
 
 Assembled with inspiration and snippets from:
-[Hugo variant for WxT](https://github.com/wet-boew/wet-boew-hugo)
-[Hugo Bootstrap v4 Blog](https://github.com/alanorth/hugo-theme-bootstrap4-blog)
-[FortAwesome](https://github.com/FortAwesome/Font-Awesome)
+
+- [Hugo variant for WxT](https://github.com/wet-boew/wet-boew-hugo)
+
+- [Hugo Bootstrap v4 Blog](https://github.com/alanorth/hugo-theme-bootstrap4-blog)
+
+- [FortAwesome](https://github.com/FortAwesome/Font-Awesome)
 
 ## License
 This repository contains the code of [Bootstrap](http://getbootstrap.com), which is licensed under the [MIT license](https://tldrlegal.com/license/mit-license), and [Font Awesome](http://fontawesome.io/), which uses [various licenses](http://fontawesome.io/license/).
