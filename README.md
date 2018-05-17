@@ -1,6 +1,7 @@
 # A Hugo Bootstrap 4 theme
 
 still under development
+[Blog describing the first phase at vation.ca](https://vation.ca/post/2018/website-accessibility/)
 
 ## Features
 
