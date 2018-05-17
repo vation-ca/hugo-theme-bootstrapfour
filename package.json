@@ -7,7 +7,7 @@
     "url": "https://github.com/vation-ca/hugo-theme-bootstrapfour.git"
   },
   "scripts": {
-    "prepare": "cp node_modules/@fortawesome/fontawesome-free-webfonts/webfonts/* static/webfonts",
+    "prepare": "mkdir static/webfonts && cp node_modules/@fortawesome/fontawesome-free-webfonts/webfonts/* static/webfonts",
     "build:css": "node-sass --output-style expanded --precision 6 source/scss/style.scss static/css/style.css.tmp && cleancss --level 1 static/css/style.css.tmp -o static/css/style.css",
     "build": "npm run build:css && npm run clean",
     "clean": "rm static/css/style.css.tmp"

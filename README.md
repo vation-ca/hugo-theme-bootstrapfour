@@ -29,7 +29,7 @@ Simply follow the commands listed below given you have the appropriate files
 ```
 
 To use hugo to launch a development local site with options to help monitor
-```console
+```sh
     hugo server -t bootstrapfour --disableFastRender -v
 ```
 
