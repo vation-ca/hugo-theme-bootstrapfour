@@ -3,31 +3,37 @@
 <head>
     {{ partialCached "resources/head-meta.html" . }}
     {{ block "json-ld" . }}
-      <!-- metadata for Nodes and Pages supplied in specific page types-->
+    <!-- metadata for Nodes and Pages supplied in specific page types-->
     {{ end }}
     <link rel="canonical" href="{{ .Permalink }}">
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     {{ partial "resources/base.html" . }}
     {{ partialCached "resources/custom.html" . }}
 </head>
-    <body vocab="http://schema.org/" typeof="WebPage">
-        {{ block "header" . }}{{ partial "header/header.html" . }}{{ end }}
-        {{ block "main" . }}<main role="main" property="mainContentOfPage" class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <article class="post">
-                        <header>
-                            <h1 id="wb-cont" property="name">
-                                {{ .Title }}
-                            </h1>                        
-                        </header>
-                        <div class="post-content">
-                            {{ .Content }}
-                        </div>                    
-                    </article>
-                </div>            
-            </div>
-        </main>{{ end }}
-        {{ block "footer" . }}{{ partialCached "footer/footer.html" . }}{{ end }}
-    </body>
+<body vocab="http://schema.org/" typeof="WebPage">
+    {{- block "header" . -}}
+    {{ partial "header/header.html" . }}
+    {{- end -}}
+    {{- block "main" . -}}
+    <main role="main" property="mainContentOfPage" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <article class="post">
+                    <header>
+                        <h1 id="wb-cont" property="name">
+                            {{ .Title }}
+                        </h1>                        
+                    </header>
+                    <div class="post-content">
+                        {{ .Content }}
+                    </div>                    
+                </article>
+            </div>            
+        </div>
+    </main>
+    {{- end -}}
+    {{- block "footer" . -}}
+    {{ partialCached "footer/footer.html" . }}
+    {{- end -}}
+</body>
 </html>

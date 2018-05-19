@@ -1,3 +1,4 @@
+{{ if and ($.Site.Data.authors) ($.Params.author) }}
 <div class="media py-2">
   {{ $athr :=  index $.Site.Data.authors $.Params.author }}              	
     <a class="pull-left " href="{{ $athr.aboutpage | relURL}}">
@@ -12,3 +13,4 @@
       </div>
     </div>
   </div>
+{{ end }}

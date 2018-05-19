@@ -2,8 +2,8 @@
     {{ partial "header/skiplink.html" . }} 
     {{ partial "header/custom.html" . }}   
     {{ partial "menu/megamenu.html" . }}
-    {{ if isset .Params "nobc" }}
+    {{- if isset .Params "nobc" }}
 {{else}}
 {{ partial "header/breadcrumb.html" . }}
-{{ end }}  
+{{ end -}}  
 </header>

@@ -1,15 +1,17 @@
+{{ if and ($.Site.Data.authors) ($.Params.author) }}
 <section class="media">
   {{ $athr :=  index $.Site.Data.authors $.Params.author }}
-    <a class="pull-left pr-4" href="{{ $athr.aboutpage | relURL}}">
-     <img class="media-object" src="{{ $athr.avatarshot | relURL}}" alt="{{ $athr.avatarshotalt}}"  />
-    </a>
-    <div class="media-body">
-     <p class="media-heading h5">{{ $athr.given_name}} {{ $athr.family_name}}</p>
-     <div>{{ $athr.title}}</div>
-      <div class="post-date text-muted"><span><i aria-hidden=true class="far fa-calendar-alt"></i></span>
-      <time datetime="{{ .Date.Format .Site.Params.DateForm }}">
-        {{ .Date.Format .Site.Params.DateForm }}
-      </time>
-      </div>
+  <a class="pull-left pr-4" href="{{ $athr.aboutpage | relURL}}">
+    <img class="media-object" src="{{ $athr.avatarshot | relURL}}" alt="{{ $athr.avatarshotalt}}"  />
+  </a>
+  <div class="media-body">
+    <p class="media-heading h5">{{ $athr.given_name}} {{ $athr.family_name}}</p>
+    <div>{{ $athr.title}}</div>
+    <div class="post-date text-muted"><span><i aria-hidden=true class="far fa-calendar-alt"></i></span>
+    <time datetime="{{ .Date.Format .Site.Params.DateForm }}">
+      {{ .Date.Format .Site.Params.DateForm }}
+    </time>
     </div>
-  </section>
+  </div>
+</section>
+{{ end }}

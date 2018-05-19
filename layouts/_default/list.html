@@ -1,9 +1,9 @@
 {{ define "main" }}
     <main role="main" property="mainContentOfPage" class="container">
-        <h1 id="wb-cont" property="name">{{ .Site.Title }}</h1>
-        <div class="drupal">
+        <h1 id="wb-cont" property="name">{{ .Title }}</h1>
+        <div class="container">
             {{ range .Data.Pages }}
-            {{ .Render "li"}}
+            {{ .Render "lipost"}}
             {{ end }}
         </div>
     </main>
