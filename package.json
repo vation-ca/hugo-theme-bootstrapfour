@@ -12,14 +12,16 @@
     "build": "npm run build:css && npm run clean",
     "clean": "rm static/css/style.css.tmp"
   },
-  "keywords": ["hugo"],
+  "keywords": [
+    "hugo"
+  ],
   "author": "Steve Hume",
   "license": "MIT",
   "devDependencies": {
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "bootstrap": "^4.1.0",
     "clean-css-cli": "^4.1.11",
-    "node-sass": "^4.9.0",
-    "cpx": "1.3.1"
+    "cpx": "1.3.1",
+    "node-sass": "^4.9.3"
   }
 }
