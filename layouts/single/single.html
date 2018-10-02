@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="{{ .Lang }}" dir="ltr">
-<head>
-    {{ partial "resources/title.html" . }}
-    {{ partial "resources/base.html" . }}
-    {{ partial "resources/custom.html" . }}
-</head>
-<body vocab="http://schema.org/" typeof="WebPage">
-    {{ partial "header/header.html" . }}
+{{ define "main" }}
     <main role="main" property="mainContentOfPage" class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <article class="post">
                 <header>
                     <h1 id="wb-cont" property="name">
                         {{ .Title }}
                     </h1>
                     <div class="post-date mrgn-bttm-md text-muted text-right small">
-                        <span><i class="far fa-calendar-alt"></i></span>
+                        <span class="glyphicon glyphicon-calendar"></span>
                         <time datetime="{{ .Date.Format .Site.Params.DateForm }}">
                             {{ .Date.Format .Site.Params.DateForm }}
                         </time>
@@ -30,8 +22,8 @@
                     <ul class="list-inline post-tags">
                         {{ range .Params.tags }}
                         <li>
-                            <a href="{{ $baseurl }}/tags/{{ . | urlize }}">
-                                <i class="fa fa-tags"></i>
+                            <a href="{{ $baseurl }}tags/{{ . | urlize }}">
+                                <i class="fas fa-tags"></i>
                                 {{ . }}
                             </a>
                         </li>
@@ -53,15 +45,10 @@
                     {{ end }}
                 </aside>
                 <footer>
-                    {{ partial "components/share.html" . }}
                     {{ partial "components/pager.html" . }}
-                    {{ partial "comments/disqus.html" . }}
                 </footer>
             </article>
         </div>
     </div>
-    {{ partial "components/date.html" . }}
     </main>
-    {{ partial "footer/footer.html" . }}
-</body>
-</html>
+{{ end }}
