@@ -3,7 +3,7 @@
     {{ partial "header/custom.html" . }}   
     {{ partial "menu/megamenu.html" . }}
     {{- if (not (isset .Params "nobc")) | or (eq .Params.nobc true) }} 
-{{else}}
+{{else -}}
 {{ partial "header/breadcrumb.html" . }}
 {{ end -}}  
 </header>
