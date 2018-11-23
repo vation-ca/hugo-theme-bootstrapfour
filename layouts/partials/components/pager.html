@@ -1,14 +1,14 @@
 <nav aria-label="Pager navigation for Posts">
     <ul class="pagination">
-        {{ if .PrevPage }}
+        {{ if .PrevPage -}}
         <li class="page-item"><a class="page-link" href="{{ .PrevPage.Permalink }}"><span aria-hidden="true">&larr;</span> Older</a></li>
-        {{ else }}
+        {{ else -}}
         <li class="page-item disabled"><a class="page-link" href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
-        {{ end }}
-        {{ if .NextPage }}
+        {{ end -}}
+        {{ if .NextPage -}}
         <li class="page-item"><a class="page-link" href="{{ .NextPage.Permalink }}">Newer <span aria-hidden="true">&rarr;</span></a></li>
-        {{ else }}
+        {{ else -}}
         <li class="page-item disabled"><a class="page-link" href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
-        {{ end }}
+        {{- end }}
     </ul>
 </nav>

@@ -1,0 +1,46 @@
+{{ "<!-- ENTERING partial head-jsonld.html -->" | safeHTML }}
+{{ if .IsPage -}}
+{{ if eq .Type "article" -}}
+<script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "articleSection" : "{{ .Section }}",
+    "name" : "{{ .Title }}",
+    "headline" : "{{ .Title }}",
+    "description" : "{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}",
+    "inLanguage" : "en-US",
+    {{ if and ($.Site.Data.authors) ($.Params.author) -}}
+    {{ $athr :=  index $.Site.Data.authors $.Params.author -}}
+    "author" : "{{ $athr.given_name}} {{ $athr.family_name}}",
+    "creator" : "{{ $athr.given_name}} {{ $athr.family_name}}",
+    "accountablePerson" : "{{ $athr.given_name}} {{ $athr.family_name}}",
+    {{ end -}}
+    "copyrightHolder" : "{{ .Site.Params.copyright }}",
+    "copyrightYear" : "{{ .PublishDate.Format "2006" }}",
+    "publisher": {
+        "@type": "Organization",
+        "name": "{{ .Site.Params.copyright }}",
+        "logo":  {
+            "@type": "ImageObject",
+            "url": "{{ .Site.Params.logo | absURL }}"
+          }
+      },
+    "datePublished": "{{ .PublishDate.Format $.Site.Params.ISO8601 }}",
+    "dateModified" : "{{ .Lastmod.Format $.Site.Params.ISO8601 }}",
+    "url" : "{{ .Permalink }}",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ .Permalink }}"
+      },
+    "wordCount" : "{{ .WordCount }}",
+    "image":  {
+        "@type": "ImageObject",
+        "url": "{{ .Site.Params.logo | absURL }}"
+      },
+    "keywords" : [ {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}"{{ $e }}"{{ end }} ]
+}
+</script>
+{{ end -}}
+{{ end -}}
+{{ "<!-- LEAVING partial head-jsonld.html -->" | safeHTML }}

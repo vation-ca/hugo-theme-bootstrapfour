@@ -2,9 +2,9 @@
 <html lang="{{ .Lang }}" dir="ltr">
 <head>
     {{ partialCached "resources/head-meta.html" . }}
-    {{ block "json-ld" . }}
+    {{ block "json-ld" . -}}
     <!-- metadata for Nodes and Pages supplied in specific page types-->
-    {{ end }}
+    {{ end -}}
     <link rel="canonical" href="{{ .Permalink }}">
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     {{ partial "resources/base.html" . }}
