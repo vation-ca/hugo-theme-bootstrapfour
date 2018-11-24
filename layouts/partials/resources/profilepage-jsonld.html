@@ -1,0 +1,50 @@
+{{ "<!-- ENTERING partial ProfilePage-jsonld.html -->" | safeHTML }}
+{{ if .IsPage -}}
+{{ if eq .Type "info" -}}
+<script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "ProfilePage",
+    "name" : "{{ .Title }}",
+    "headline" : "{{ .Title }}",
+    "description" : "{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}",
+    "inLanguage" : "en-US",
+    "speakable": [ "#wb-cont", "#thesummary"],
+    {{ if and ($.Site.Data.authors) ($.Params.author) -}}
+    {{ $athr :=  index $.Site.Data.authors $.Params.author -}}
+    "author" : {
+        "@type": "Person",
+        "name": "{{ $athr.given_name}} {{ $athr.family_name}}"
+      },
+    {{ end -}}
+    "copyrightHolder" :  {
+        "@type": "Organization",
+        "name": "{{ .Site.Params.copyright }}"
+      },
+    "copyrightYear" : "{{ .Date.Format "2006" }}",
+    "publisher": {
+        "@type": "Organization",
+        "name": "{{ .Site.Params.copyright }}",
+        "logo":  {
+            "@type": "ImageObject",
+            "url": "{{ .Site.Params.logo | absURL }}"
+          }
+      },
+    "datePublished": "{{ .Date.Format $.Site.Params.ISO8601 }}",
+    "lastReviewed" : "{{ .Lastmod.Format $.Site.Params.ISO8601 }}",
+    "dateModified" : "{{ .Lastmod.Format $.Site.Params.ISO8601 }}",
+    "url" : "{{ .Permalink }}",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ .Permalink }}"
+      },
+    "image":  {
+        "@type": "ImageObject",
+        "url": "{{ .Site.Params.logo | absURL }}"
+      },
+    "keywords" : [ {{ range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}"{{ $e }}"{{ end }} ]
+}
+</script>
+{{ end -}}
+{{ end -}}
+{{ "<!-- LEAVING partial profilepage-jsonld.html -->" | safeHTML }}

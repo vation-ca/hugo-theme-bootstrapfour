@@ -1,11 +1,8 @@
-{{ "<!-- ENTERING partial info-jsonld.html -->" | safeHTML }}
-{{ if .IsPage -}}
-{{ if eq .Type "info" -}}
+{{ "<!-- ENTERING partial webpage-jsonld.html -->" | safeHTML }}
 <script type="application/ld+json">
 {
     "@context" : "http://schema.org",
-    "@type" : "BlogPosting",
-    "articleSection" : "{{ .Section }}",
+    "@type" : "WebPage",
     "name" : "{{ .Title }}",
     "headline" : "{{ .Title }}",
     "description" : "{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}",
@@ -37,7 +34,6 @@
         "@type": "WebPage",
         "@id": "{{ .Permalink }}"
       },
-    "wordCount" : "{{ .WordCount }}",
     "image":  {
         "@type": "ImageObject",
         "url": "{{ .Site.Params.logo | absURL }}"
@@ -45,6 +41,4 @@
     "keywords" : [ {{ range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}"{{ $e }}"{{ end }} ]
 }
 </script>
-{{ end -}}
-{{ end -}}
-{{ "<!-- LEAVING partial info-jsonld.html -->" | safeHTML }}
+{{ "<!-- LEAVING partial webpage-jsonld.html -->" | safeHTML }}
