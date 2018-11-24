@@ -1,6 +1,6 @@
-{{ "<!-- ENTERING partial head-jsonld.html -->" | safeHTML }}
+{{ "<!-- ENTERING partial info-jsonld.html -->" | safeHTML }}
 {{ if .IsPage -}}
-{{ if eq .Type "article" -}}
+{{ if eq .Type "info" -}}
 <script type="application/ld+json">
 {
     "@context" : "http://schema.org",
@@ -47,4 +47,4 @@
 </script>
 {{ end -}}
 {{ end -}}
-{{ "<!-- LEAVING partial head-jsonld.html -->" | safeHTML }}
+{{ "<!-- LEAVING partial info-jsonld.html -->" | safeHTML }}
