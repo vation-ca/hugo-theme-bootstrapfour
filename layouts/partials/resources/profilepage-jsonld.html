@@ -1,6 +1,4 @@
 {{ "<!-- ENTERING partial ProfilePage-jsonld.html -->" | safeHTML }}
-{{ if .IsPage -}}
-{{ if eq .Type "info" -}}
 <script type="application/ld+json">
 {
     "@context" : "http://schema.org",
@@ -9,14 +7,10 @@
     "headline" : "{{ .Title }}",
     "description" : "{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}",
     "inLanguage" : "en-US",
-    "speakable": [ "#wb-cont", "#thesummary"],
-    {{ if and ($.Site.Data.authors) ($.Params.author) -}}
-    {{ $athr :=  index $.Site.Data.authors $.Params.author -}}
-    "author" : {
-        "@type": "Person",
-        "name": "{{ $athr.given_name}} {{ $athr.family_name}}"
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [ "#wb-cont", "#thesummary"]
       },
-    {{ end -}}
     "copyrightHolder" :  {
         "@type": "Organization",
         "name": "{{ .Site.Params.copyright }}"
@@ -38,13 +32,19 @@
         "@type": "WebPage",
         "@id": "{{ .Permalink }}"
       },
-    "image":  {
-        "@type": "ImageObject",
-        "url": "{{ .Site.Params.logo | absURL }}"
+      {{ if and ($.Site.Data.authors) ($.Params.author) -}}
+    {{ $athr :=  index $.Site.Data.authors $.Params.author -}}
+    "author" : {
+        "@type": "Person",
+        "name": "{{ $athr.given_name}} {{ $athr.family_name}}"
       },
+      "image":  {
+        "@type": "ImageObject",
+        "url": "{{ $athr.imageshot | absURL }}"
+      },
+    {{ end -}}
+
     "keywords" : [ {{ range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}"{{ $e }}"{{ end }} ]
 }
 </script>
-{{ end -}}
-{{ end -}}
 {{ "<!-- LEAVING partial profilepage-jsonld.html -->" | safeHTML }}

@@ -38,10 +38,12 @@
         "@id": "{{ .Permalink }}"
       },
     "wordCount" : "{{ .WordCount }}",
+    {{ if .Params.image -}}
     "image":  {
         "@type": "ImageObject",
-        "url": "{{ .Site.Params.logo | absURL }}"
+        "url": "{{ .Params.image | absURL }}"
       },
+      {{ end -}}
     "keywords" : [ {{ range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}"{{ $e }}"{{ end }} ]
 }
 </script>
