@@ -2,7 +2,7 @@
     {{ partial "header/skiplink.html" . }} 
     {{ partial "header/custom.html" . }}   
     {{ partial "menu/megamenu.html" . }}
-    {{- if (not (isset .Params "nobc")) | or (eq .Params.nobc true) }} 
+    {{- if ((isset .Params "nobc")) | or (eq .Params.nobc true) }} 
 {{else -}}
 {{ partial "header/breadcrumb.html" . }}
 {{ end -}}  

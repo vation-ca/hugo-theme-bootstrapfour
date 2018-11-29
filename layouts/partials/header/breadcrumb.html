@@ -1,10 +1,13 @@
-<nav class="container" aria-label="breadcrumb">{{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}{{ $.Scratch.Add "path" .Site.BaseURL }}
+<nav class="container" aria-label="breadcrumb">{{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "/" }}{{ $.Scratch.Add "path" .Site.BaseURL }}
   <ol class="breadcrumb bg-white pl-0">
       <li class="breadcrumb-item"><a href="{{ .Site.BaseURL }}">Home</a></li>
-        {{ range $index, $element := split $url "/" -}}{{- $.Scratch.Add "path" $element -}}{{- $.Scratch.Add "path" "/" -}}
-            {{- if ne $element "" -}}{{- if eq $index 0 -}}<li class="breadcrumb-item"><a href='{{ $.Scratch.Get "path" }}'>{{ . | title}}</a></li>
-            {{- end }}
-            {{- end -}}
+        {{ range $index, $element := split $url "/" -}}
+        {{- if ne $element "" -}}{{- if ne $index 0 -}}{{- $.Scratch.Add "path" $element -}}{{- $.Scratch.Add "path" "/" -}}
+            {{- if lt $index 2 -}}{{- if lt $.Data.Pages 1 -}}
+      <li class="breadcrumb-item"><a href='{{ $.Scratch.Get "path" }}'>{{ . | title}}</a></li>
+            {{- end -}}{{- end -}}
+            {{- end -}}            {{- end -}}
+
         {{- end }}
       <li class="breadcrumb-item">{{ .Title }}</li>
   </ol>
