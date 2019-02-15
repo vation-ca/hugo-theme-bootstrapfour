@@ -1,9 +1,12 @@
+{{ define "json-ld" }}
+{{ partial "resources/webpage-jsonld.html" . }} 
+{{ end }}
 {{ define "main" }}
     <main role="main" property="mainContentOfPage" class="container">
-        <h1 id="wb-cont" property="name">{{ .Site.Title }}</h1>
-        <div class="drupal">
-            {{ range .Data.Pages }}
-            {{ .Render "li"}}
+        <h1 id="wb-cont" property="name">{{ .Title }}</h1>
+        <div class="container">
+            {{ range .Data.Pages.ByTitle}}
+            {{ .Render "lipost"}}
             {{ end }}
         </div>
     </main>
