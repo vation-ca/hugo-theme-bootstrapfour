@@ -1,5 +1,5 @@
 {{ if and ($.Site.Data.authors) ($.Params.author) }}
-<section class="media py-3">
+<div class="media py-3">
   {{ $athr :=  index $.Site.Data.authors $.Params.author }}
   <a class="pull-left pr-4" href="{{ $athr.aboutpage | relURL}}">
     <img class="media-object" src="{{ $athr.avatarshot | relURL}}" alt="{{ $athr.avatarshotalt}}"  />
@@ -13,5 +13,5 @@
     </time>
     </div>
   </div>
-</section>
+</div>
 {{ end }}

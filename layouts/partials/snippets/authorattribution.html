@@ -2,7 +2,7 @@
 <div class="media py-2">
   {{ $athr :=  index $.Site.Data.authors $.Params.author }}              	
     <a class="pull-left " href="{{ $athr.aboutpage | relURL}}">
-     <img class="media-object  pr-4" height="80px" src="{{ $athr.imageshot | relURL}}" alt="{{ $athr.imageshotalt}}"  />
+     <img class="media-object  pr-4" height="80" src="{{ $athr.imageshot | relURL}}" alt="{{ $athr.imageshotalt}}"  />
     </a>
     <div class="media-body">
      <p class="media-heading h5">{{ $athr.given_name}} {{ $athr.family_name}}</p>

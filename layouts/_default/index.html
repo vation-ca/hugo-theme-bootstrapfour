@@ -2,7 +2,7 @@
 {{ partial "resources/webpage-jsonld.html" . }} 
 {{ end }}
 {{ define "main" }}
-    <main role="main" property="mainContentOfPage" class="container">        
+    <main class="container">        
         {{ .Content }}
         {{ partial "components/date.html" . }}
     </main>

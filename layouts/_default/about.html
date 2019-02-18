@@ -2,7 +2,7 @@
 {{ partial "resources/webpage-jsonld.html" . }} 
 {{ end }}
 {{ define "main" }}
-    <main role="main" property="mainContentOfPage" class="container">
+    <main class="container">
         <h1 id="wb-cont" property="name">{{ .Title }}</h1>
         <div class="container">
             {{ range .Data.Pages.ByTitle}}
