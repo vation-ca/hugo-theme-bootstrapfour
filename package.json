@@ -20,7 +20,7 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "bootstrap": "^4.3.1",
-    "clean-css-cli": "^4.2.1",
+    "clean-css-cli": "^4.3.0",
     "cssgzmin": "^1.0.2",
     "cpx": "1.5.0",
     "node-sass": "^4.11.0"
