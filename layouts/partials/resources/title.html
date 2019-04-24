@@ -1,6 +1,6 @@
 <title>
-    {{ if eq .URL "/" }}{{ .Site.Title }}
-    {{ else if eq .URL "/post/" }}All Entries &middot; {{ .Site.Title }}
-    {{ else if in .URL "/tags/" }}{{ .Site.Title }}
+    {{ if eq .Permalink "/" }}{{ .Site.Title }}
+    {{ else if eq .Permalink "/post/" }}All Entries &middot; {{ .Site.Title }}
+    {{ else if in .Permalink "/tags/" }}{{ .Site.Title }}
     {{ else }}{{ .Title }}{{ end }}
 </title>

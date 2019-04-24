@@ -8,17 +8,17 @@
                 {{ range .Site.Menus.sidebar }}
                     {{ if .HasChildren }}
                     <li{{if $currentPage.IsMenuCurrent "sidebar" . }} class="active"{{end}}>
-                        <a href="{{.URL}}" class="list-group-item">{{ .Name }}</a>
+                        <a href="{{.Permalink}}" class="list-group-item">{{ .Name }}</a>
                         <ul class="list-group menu list-unstyled">
                             {{ range .Children }}
                             <li{{if $currentPage.IsMenuCurrent "sidebar" . }} class="active"{{end}}>
-                                <a href="{{.URL}}" class="list-group-item">{{ .Name }}</a>
+                                <a href="{{.Permalink}}" class="list-group-item">{{ .Name }}</a>
                             </li>
                             {{ end }}
                         </ul>
                     {{else}}
                     <li>
-                        <a href="{{.URL}}" class="list-group-item">{{ .Name }}</a>
+                        <a href="{{.Permalink}}" class="list-group-item">{{ .Name }}</a>
                     {{end}}
                     </li>
               {{end}}

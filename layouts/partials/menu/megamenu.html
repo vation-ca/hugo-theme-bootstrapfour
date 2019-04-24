@@ -14,12 +14,12 @@
                 </a>
                 <ul class="sm list-unstyled" role="menu">
                     {{ range .Children -}}
-                    <li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.URL}}"> {{ .Name }}</a></li>
+                    <li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.Permalink}}"> {{ .Name }}</a></li>
                     {{ end -}}
                 </ul>
                 {{ else -}}
                 <li>
-                <a class="" href="{{ .URL }}">
+                <a class="" href="{{ .Permalink }}">
                     {{ .Pre }}
                     <span>{{ .Name }}</span>
                 </a>
