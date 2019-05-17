@@ -23,6 +23,6 @@
     "clean-css-cli": "^4.3.0",
     "cssgzmin": "^1.0.2",
     "cpx": "1.5.0",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.12.0"
   }
 }
