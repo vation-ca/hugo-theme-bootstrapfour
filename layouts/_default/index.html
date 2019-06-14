@@ -2,7 +2,7 @@
 {{ partial "resources/webpage-jsonld.html" . }} 
 {{ end }}
 {{ define "main" }}
-    <main class="container">        
+    <main id="wb-cont" class="container">        
         {{ .Content }}
         {{ partial "components/date.html" . }}
     </main>
