@@ -23,6 +23,8 @@
     "clean-css-cli": "^4.3.0",
     "cssgzmin": "^1.0.2",
     "cpx": "1.5.0",
+    "kind-of": ">=6.0.3",
+    "braces": ">=2.3.1",
     "node-sass": "^4.13.1"
   }
 }
