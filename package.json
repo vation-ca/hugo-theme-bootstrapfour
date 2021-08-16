@@ -1,6 +1,6 @@
 {
   "name": "bootstrapfour",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A Bootstrap v4 theme for the Hugo static site generator.",
   "repository": {
     "type": "git",
@@ -21,10 +21,10 @@
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "bootstrap": "^4.4.1",
     "braces": ">=3.0.2",
-    "clean-css-cli": "^4.3.0",
+    "clean-css-cli": "^5.3.3",
     "cpx": "1.5.0",
     "cssgzmin": "^1.0.2",
     "kind-of": ">=6.0.3",
-    "node-sass": "^4.14.1"
+    "node-sass": "^6.0.1"
   }
 }
