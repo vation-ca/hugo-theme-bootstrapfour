@@ -1,5 +1,7 @@
 # A Hugo Bootstrap 4 theme
 
+This repo will be archived as I am moving all my sites to Publish and am tired of all the npm security fixes. I leave it here as an example of adding JSON-LD metadata and some template with accessibity considered (circa 2017)
+
 still under development
 [Blog describing the first phase at vation.ca](https://vation.ca/post/2018/website-accessibility/)
 
